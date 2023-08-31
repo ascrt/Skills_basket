@@ -75,6 +75,11 @@ class Model extends Db {
         return $query->fetch();
     }
 
+    /*** Create ***/
+
+    public function create() {
+        
+    }
 
 }
 
