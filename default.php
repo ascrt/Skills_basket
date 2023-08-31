@@ -33,5 +33,7 @@
             <p> &copy; 2023 tout droit réservés</p>
         </footer>
     </div>
+
+    <script src="assets/js/scripit.js"></script>
 </body>
 </html>
