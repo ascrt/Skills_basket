@@ -17,6 +17,46 @@ class ArticlesModel extends Model {
         //On déclare le nom de la table
         $this->table = "articles";
     }
+
+    //Getter
+    public function getId() {
+        return $this->id;
+    }
+    public function getTitle() {
+        return $this->title;
+    }
+    public function getContent() {
+        return $this->content;
+    }
+    public function getDate() {
+        return $this->date;
+    }
+    public function getCategoryId() {
+        return $this->category_id;
+    }
+
+    //Setter
+    public function setId($id): self {
+        $this->id = $id;
+        return $this;
+    
+    }
+    public function setTitle($title): self {
+        $this->title= $title;
+        return $this;
+    
+    }
+    public function setContent($content): self {
+        $this->id = $content;
+        return $this;
+    
+    }
+    public function setCategoryId($category_id): self {
+        $this->id = $category_id;
+        return $this;
+    
+    }
+    
 }
 
 ?>

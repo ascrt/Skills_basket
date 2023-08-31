@@ -77,8 +77,35 @@ class Model extends Db {
 
     /*** Create ***/
 
-    public function create() {
+    public function create(Model $model) {
+
+        //On aura 3 tableau
+        $champs = [];
+        $inter = [];
+        $valeurs = [];
+
+        foreach($model as $champ => $valeur) {
+
+            if($valeur != null && $champ != "db" && $champ != 'table') {
+                array_push($champs, "$champ");
+                array_push($valeurs, $valeur);
+                array_push($inter, "?");
+            }
+
+            $listechamps = implode(' ,', $champs);
+            $listinter = implode(' ,', $inter);
+
+            var_dump($listechamps, $listinter);
+            echo "INSERT INTO $this->table ($listechamps) 
+            VALUES ($listinter)";
+            /**return $this->requete("INSERT INTO $this->table ($listechamps) 
+                                    VALUES ($listinter)", $valeurs);**/
         
+        }
+
+        var_dump($champs, $valeurs, $inter);
+
+        //On veut insert into articles (..,..,..,) values(?,?, ?)
     }
 
 }
