@@ -8,6 +8,7 @@ class Autoloader {
     }
 
     static function autoload($class) {
+        echo $class;
 
         /** On decoupe le namespace **/
         $class = str_replace(__NAMESPACE__ . '\\', "", $class);
