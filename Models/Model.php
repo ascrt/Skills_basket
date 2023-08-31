@@ -85,28 +85,43 @@ class Model extends Db {
         $valeurs = [];
 
         foreach($model as $champ => $valeur) {
-
+            //On veut insert into articles (..,..,..,) values(?,?, ?)
             if($valeur != null && $champ != "db" && $champ != 'table') {
                 array_push($champs, "$champ");
                 array_push($valeurs, $valeur);
                 array_push($inter, "?");
             }
-
-            $listechamps = implode(' ,', $champs);
-            $listinter = implode(' ,', $inter);
-
-            var_dump($listechamps, $listinter);
-            echo "INSERT INTO $this->table ($listechamps) 
-            VALUES ($listinter)";
-            /**return $this->requete("INSERT INTO $this->table ($listechamps) 
-                                    VALUES ($listinter)", $valeurs);**/
-        
         }
 
         var_dump($champs, $valeurs, $inter);
+        $listechamps = implode(' ,', $champs);
+        $listinter = implode(' ,', $inter);
 
-        //On veut insert into articles (..,..,..,) values(?,?, ?)
+        var_dump($listechamps, $listinter);
+        echo "INSERT INTO $this->table ($listechamps) 
+        VALUES ($listinter)";
+        /**return $this->requete("INSERT INTO $this->table ($listechamps) 
+                                VALUES ($listinter)", $valeurs);**/
     }
+
+    public function hydrate(array $donnees) {
+
+        
+        foreach($donnees as $key => $value) {
+
+            //Recupère le setter correspondant à la clé
+            $setter = 'set' . ucfirst($key);
+
+            //verifie si le setter existe
+            if(method_exists($this,$setter)) {
+                //La methode existe
+                $this->$setter($value);
+            }
+        }
+
+        return $this;
+    }
+
 
 }
 

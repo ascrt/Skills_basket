@@ -47,12 +47,12 @@ class ArticlesModel extends Model {
     
     }
     public function setContent($content): self {
-        $this->id = $content;
+        $this->content = $content;
         return $this;
     
     }
     public function setCategoryId($category_id): self {
-        $this->id = $category_id;
+        $this->category_id = $category_id;
         return $this;
     
     }
