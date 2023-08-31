@@ -21,7 +21,7 @@ class Db extends PDO {
     private function __construct() {
 
         //DSN de connexion
-        $dsn = "mysql:host=". self::DBHOST . ";db_name=" . self::DBNAME;
+        $dsn = "mysql:host=". self::DBHOST . ";dbname=" . self::DBNAME;
 
         //Connexion à la base de données
         try {

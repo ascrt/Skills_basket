@@ -37,7 +37,7 @@ class Model extends Db {
 
     /*** Read ***/
     public function readAll() {
-        $query = $this->requete('SELECT * FROM'. $this->table);
+        $query = $this->requete('SELECT * FROM ' . $this->table);
         return $query->fetchAll();
     }
 
