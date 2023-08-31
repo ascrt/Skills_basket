@@ -28,15 +28,14 @@ nav {
     align-items: center;
     justify-content: space-between;
     background-color: brown;
-    border: 1px solid red;
 }
 
 
 /*** Bouton burger ***/
 
 nav button {
-    height: 60px;
-    width: 60px;
+    height: 40px;
+    width: 40px;
     border: none;
     outline: none;
     background-color: transparent;
@@ -60,22 +59,22 @@ nav button {
 
 /***** Transformation du burger avec un active ****/
 
-nav button:active .l1 {
+nav button.active .l1 {
     background-color: whitesmoke;
     transform: translateY(0) rotate(-45deg);
 }
 
-nav button:active .l2 {
+nav button.active .l2 {
     opacity: 0;
 }
 
-nav button:active .l3 {
+nav button.active .l3 {
     background-color: whitesmoke;
     transform: translateY(0) rotate(45deg);
 }
 /*** Liste de liens ***/
 nav ul {
-    border: 1px solid green;
+    transition: transform 0.5s ease-out;
     transform: translateX(-100%);
 }
 
@@ -91,7 +90,11 @@ nav ul li a {
     text-decoration: none;
 }
 
+nav ul li a:hover {
+    color: orangered;
+}
+
 /****Apparition de la nav *****/
-nav ul:active  {
+nav ul.active  {
     transform: translateX(0);
 }

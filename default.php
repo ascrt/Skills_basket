@@ -17,7 +17,7 @@
                 <li> <a href="#"> Inscription </a></li>
             </ul>
             <!-- Le burger -->
-            <button>
+            <button id="btn-burger">
                 <span class="line l1"> </span>
                 <span class="line l2"></span>
                 <span class="line l3"></span>
