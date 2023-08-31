@@ -10,7 +10,7 @@
     <div class="grid-container">
         <nav>
             <!-- Les liens -->
-            <ul>
+            <ul class="nav-lien">
                 <li> <a href="#"> Accueil </a></li>
                 <li> <a href="#"> Articles </a></li>
                 <li> <a href="#"> Login </a></li>
