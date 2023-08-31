@@ -9,6 +9,6 @@ require_once "Autoloader.php";
 Autoloader::register();
 
 $model = new ArticlesModel();
-var_dump($model->readAll());
+var_dump($model->read(1));
 
 ?>

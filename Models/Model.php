@@ -36,9 +36,43 @@ class Model extends Db {
     //CRUD
 
     /*** Read ***/
+
+    //Lire tous les articles
     public function readAll() {
         $query = $this->requete('SELECT * FROM ' . $this->table);
         return $query->fetchAll();
+    }
+
+    //Lire les articles par critères
+    public function readBy(array $critere) {
+
+        //Critère dans un tableau, ce tableau sera eclaté en 2 tableau(champs et valeur)
+        $champs = [];
+        $valeurs = [];
+
+        foreach($critere as $champ => $valeur) {
+            array_push($champs, "$champ = ?");
+            array_push($valeurs, $valeur);
+        }
+
+        var_dump($champs, $valeurs);
+
+        //On veut select * from articles where titre = ? and date = 2023-08-31
+        $listechamps = implode(' AND ', $champs);
+        var_dump($listechamps);
+
+        //On éxécute la requete
+        $query = $this->requete('SELECT * FROM ' . $this->table . ' WHERE ' . $listechamps, $valeurs);
+
+        return $query->fetchAll();
+
+    }
+
+
+    //Lire les articles selon l'id
+    public function read(int $id) {
+        $query = $this->requete('SELECT * FROM ' . $this->table . ' WHERE id=' . $id);
+        return $query->fetch();
     }
 
 
