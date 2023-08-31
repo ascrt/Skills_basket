@@ -1,0 +1,97 @@
+/*** RESET ***/
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+li {
+    list-style-type: none;
+}
+
+/**** Grille du site ****/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+/**** Navgiation ****/
+
+nav {
+    grid-column: 1 / 6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: brown;
+    border: 1px solid red;
+}
+
+
+/*** Bouton burger ***/
+
+nav button {
+    height: 60px;
+    width: 60px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.line {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+.l1 {
+    transform: translateY(-10px);
+}
+
+.l3 {
+    transform: translateY(10px);
+}
+
+/***** Transformation du burger avec un active ****/
+
+nav button:active .l1 {
+    background-color: whitesmoke;
+    transform: translateY(0) rotate(-45deg);
+}
+
+nav button:active .l2 {
+    opacity: 0;
+}
+
+nav button:active .l3 {
+    background-color: whitesmoke;
+    transform: translateY(0) rotate(45deg);
+}
+/*** Liste de liens ***/
+nav ul {
+    border: 1px solid green;
+    transform: translateX(-100%);
+}
+
+nav ul li {
+    margin: 5px;
+    padding: 5px;
+}
+
+nav ul li a {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.4em;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+/****Apparition de la nav *****/
+nav ul:active  {
+    transform: translateX(0);
+}
