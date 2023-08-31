@@ -24,6 +24,7 @@ li {
 
 nav {
     grid-column: 1 / 6;
+    grid-row: 1/ 2;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -73,15 +74,6 @@ nav button.active .l3 {
     transform: translateY(0) rotate(45deg);
 }
 /*** Liste de liens ***/
-nav ul {
-    transition: transform 0.5s ease-out;
-    transform: translateX(-100%);
-}
-
-nav ul li {
-    margin: 5px;
-    padding: 5px;
-}
 
 nav ul li a {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -134,19 +126,28 @@ footer {
 
 
 /**** Responsive ****/
+@media screen and (max-width:768px) {
 
+    nav ul {
+        transition: transform 0.5s ease-out;
+        transform: translateX(-100%);
+    }
+    
+}
 /*** Navgation responsive pour tablette et ordinateur ***/
-@media screen and (min-width:769px) {
-
+@media screen and (min-width:769px){
+    
     #btn-burger{
         display: none;
     }
 
+
     nav ul {
         display: flex;
-        align-items: center;
         justify-content: space-between;
+        align-items: center;
         width: 100%;
-        transform: translateX(0);
+        background-color: forestgreen;
     }
+
 }
