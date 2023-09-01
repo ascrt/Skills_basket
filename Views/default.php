@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Skills_Basket</title>
+    <title> <?php echo $onglet;?></title>
     <link rel="stylesheet" href="../Public/assets/css/style.css">
 </head>
 <body>
@@ -27,7 +27,7 @@
             <h1> Skills_Basket</h1>
         </header>
         <main>
-
+            <?= $content; ?>
         </main>
         <footer>
             <p> &copy; 2023 tout droit réservés</p>

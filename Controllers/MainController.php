@@ -6,7 +6,8 @@ class MainController extends Controller {
 
     public function index() {
 
-        echo "Skills basket est lancé";
+        $this->render('/main/index');
+
     }
 }
 

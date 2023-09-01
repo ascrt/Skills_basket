@@ -11,7 +11,18 @@ abstract class Controller {
         extract($donnees);
 
         //Buffer et template
-        
+
+        /*** debut du buffer ***/
+        ob_start();
+
+        /*** chemin vers la vue ***/
+        require_once ROOT .'/Views/' . $fichier . '.php';
+
+        /*** Fin du buffer ***/
+        $content = ob_get_clean();
+
+        /*** Importation de la base du template ***/
+        require_once ROOT . '/Views/' . $template . '.php';
 
     }
 
