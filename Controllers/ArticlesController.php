@@ -13,7 +13,7 @@ class ArticlesController extends Controller {
         $articles = $articleModel->readAll();
 
         //On envoie le resultat dans une vue
-        $this->render('/articles/index',['articles' => $articles]);
+        $this->render('/articles/index', compact('articles'));
     }
 
 
