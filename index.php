@@ -16,7 +16,7 @@ $data = [
 
 $model = new ArticlesModel();
 $article = $model->hydrate($data);
-$model->create($article);
+$model->update(2, $article);
 
 
 ?>

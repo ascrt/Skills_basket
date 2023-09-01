@@ -125,6 +125,32 @@ class Model extends Db {
 
     /*** UPDATE ***/
 
+    public function update(int $id, model $model) {
+
+        //Initialisation des tableau champs et valeurs
+        $champs = [];
+        $valeurs = [];
+
+        foreach($model as $champ => $valeur) {
+            
+            //On veut update articles title = ?, content = ? where id = ?
+            if($valeur != null && $champ != 'db' && $champ != 'table') {
+                array_push($champs, "$champ = ?");
+                array_push($valeurs, $valeur);
+            } 
+        }
+
+        //On ajoute l'id au tableau de valeurs
+        array_push($valeurs, $id);
+        var_dump($champs, $valeurs);
+
+        $listechamps = implode(', ', $champs);
+        var_dump($listechamps);
+        
+        /*return $this->requete("UPDATE $this->table SET $listechamps WHERE id = ?", $valeurs);*/
+        echo "UPDATE $this->table SET $listechamps WHERE id = ?";
+    }
+
 
 }
 
