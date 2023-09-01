@@ -35,7 +35,7 @@ class Model extends Db {
 
     //CRUD
 
-    /*** Read ***/
+    /*** READ ***/
 
     //Lire tous les articles
     public function readAll() {
@@ -75,7 +75,7 @@ class Model extends Db {
         return $query->fetch();
     }
 
-    /*** Create ***/
+    /*** CREATE ***/
 
     public function create(Model $model) {
 
@@ -104,6 +104,7 @@ class Model extends Db {
                                 VALUES ($listinter)", $valeurs);**/
     }
 
+    //Methode pour hydrater un objet
     public function hydrate(array $donnees) {
 
         
@@ -121,6 +122,8 @@ class Model extends Db {
 
         return $this;
     }
+
+    /*** UPDATE ***/
 
 
 }
