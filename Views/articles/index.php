@@ -6,6 +6,6 @@
         <h2> <?= $article->title; ?> </h2>
         <p> <?= $article->content; ?> </p>
         <p> <?= $article->date;?> </p>
-        <a href="#"> Voir plus </a>
+        <a href="/articles/single/<?= $article->id;?>"> Voir plus </a>
     <?php endforeach;?>
 </article>

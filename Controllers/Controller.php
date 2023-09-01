@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\ArticlesModel;
+
 abstract class Controller {
 
     //Methode qui affiche le rendu sur une vue
@@ -25,6 +27,8 @@ abstract class Controller {
         require_once ROOT . '/Views/' . $template . '.php';
 
     }
+
+
 
 }
 

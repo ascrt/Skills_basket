@@ -16,6 +16,15 @@ class ArticlesController extends Controller {
         $this->render('/articles/index',['articles' => $articles]);
     }
 
+
+    public function single(int $id) {
+        
+        $articleModel = new ArticlesModel();
+
+        $article = $articleModel->read($id);
+
+        $this->render('/articles/single', compact('article'));
+    }
 }
 
 

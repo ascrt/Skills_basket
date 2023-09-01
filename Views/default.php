@@ -34,6 +34,6 @@
         </footer>
     </div>
 
-    <script src="assets/js/scripit.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
