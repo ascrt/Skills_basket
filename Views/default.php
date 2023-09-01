@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?php echo $onglet;?></title>
-    <link rel="stylesheet" href="../Public/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="grid-container">
         <nav>
             <!-- Les liens -->
             <ul class="nav-lien">
-                <li> <a href="#"> Accueil </a></li>
-                <li> <a href="#"> Articles </a></li>
+                <li> <a href="/"> Accueil </a></li>
+                <li> <a href="/articles"> Articles </a></li>
                 <li> <a href="#"> Login </a></li>
                 <li> <a href="#"> Inscription </a></li>
             </ul>

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Core;
-use App\Controllers\Controller;
+
 use App\Controllers\MainController;
 
 class Main {
@@ -40,10 +40,10 @@ class Main {
             //Ensuite on ajoute le namespace et le controller
             //Puis on enlève 1er élément du tableau
             
-            $controller = '\\App\\Controllers' . ucfirst(array_shift($params)) . 'Controller';
+            $controller = '\\App\\Controllers\\' . ucfirst(array_shift($params)) . 'Controller';
 
             //On instancie le controller
-            $controller = new Controller();
+            $controller = new $controller();
 
             //2èmè paramètre
 
