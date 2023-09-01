@@ -33,7 +33,7 @@ class Model extends Db {
         }
     }
 
-    //CRUD
+    /******** CRUD *********/
 
     /*** READ ***/
 
@@ -115,7 +115,7 @@ class Model extends Db {
 
             //verifie si le setter existe
             if(method_exists($this,$setter)) {
-                //La methode existe
+                //Si la methode existe
                 $this->$setter($value);
             }
         }
@@ -149,6 +149,11 @@ class Model extends Db {
         
         /*return $this->requete("UPDATE $this->table SET $listechamps WHERE id = ?", $valeurs);*/
         echo "UPDATE $this->table SET $listechamps WHERE id = ?";
+    }
+
+    /*** DELETE ***/
+    public function delete(int $id) {
+        return $this->requete("DELETE FROM $this->table WHERE id = ?", [$id]);
     }
 
 
