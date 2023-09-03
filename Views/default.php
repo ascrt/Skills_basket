@@ -9,20 +9,31 @@
 <body>
     <div class="grid-container">
         <nav>
-            <!-- Les liens -->
-            <ul class="nav-lien">
-                <li> <a href="/"> Accueil </a></li>
-                <li> <a href="/articles"> Articles </a></li>
-                <li> <a href="#"> Login </a></li>
-                <li> <a href="#"> Inscription </a></li>
+        <!-- Liens -->
+            <ul class="liens">
+                <li><a href="/"> Acceuil</a></li>
+                <li><a href="/articles"> Articles</a></li>
+                <li>
+                    <!-- dropdown  -->
+                    <div class="dropdown">
+                        <a href="#"> Catégories</a>
+                        <!-- Dropdown contenu -->
+                        <div class="dropdown-contenu">
+                            <a href="#"> Catégorie 1</a>
+                            <a href="#"> Catégorie 2</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#"> Login </a></li>
+                <li><a href="#"> Contact </a></li>
             </ul>
-            <!-- Le burger -->
+            <!-- Bouton burger -->
             <button id="btn-burger">
-                <span class="line l1"> </span>
+                <span class="line l1"></span>
                 <span class="line l2"></span>
                 <span class="line l3"></span>
             </button>
-        </nav>
+        </nav>  
         <header>
             <h1> Skills_Basket</h1>
         </header>

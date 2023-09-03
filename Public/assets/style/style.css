@@ -12,6 +12,9 @@ li {
     list-style-type: none;
 }
 
+a {
+    text-decoration: none;
+}
 /**** Grille du site ****/
 
 .grid-container {
@@ -22,23 +25,23 @@ li {
 
 /**** Navgiation ****/
 
+/*** nav ***/
 nav {
     grid-column: 1 / 8;
     grid-row: 1/ 2;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: brown;
+    background-color: rgb(61, 60, 60);
 }
 
-
-/*** Bouton burger ***/
-
-nav button {
-    height: 40px;
-    width: 40px;
-    border: none;
+/*** Le burger ***/
+#btn-burger {
+    height: 50px;
+    width: 50px;
+    margin-right: 5px;
     outline: none;
+    border: none;
     background-color: transparent;
     cursor: pointer;
 }
@@ -58,42 +61,78 @@ nav button {
     transform: translateY(10px);
 }
 
-/***** Transformation du burger avec un active ****/
-
-nav button.active .l1 {
-    background-color: whitesmoke;
-    transform: translateY(0) rotate(-45deg);
+#btn-burger.active .l1 {
+    transform: rotate(135deg);
 }
 
-nav button.active .l2 {
+#btn-burger.active .l2{
     opacity: 0;
 }
 
-nav button.active .l3 {
-    background-color: whitesmoke;
-    transform: translateY(0) rotate(45deg);
-}
-/*** Liste de liens ***/
-
-nav ul li a {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.4em;
-    color: whitesmoke;
-    text-decoration: none;
+#btn-burger.active .l3 {
+    transform: rotate(-135deg);
 }
 
-nav ul li:hover {
-    outline: 1px solid blue;
-}
-
-nav ul li a:hover {
-    color: orangered;
-}
-
-/****Apparition de la nav *****/
-nav ul.active  {
+.active {
     transform: translateX(0);
 }
+
+/**** Les liens ***/
+
+nav ul {
+    transform: translateX(-100%);
+}
+.liens {
+    width: 60%;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.liens li {
+    margin: 5px;
+}
+
+.liens li a {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.4em;
+    color: whitesmoke;
+}
+
+.liens li a:hover {
+    color: lightgoldenrodyellow;
+}
+
+/*** Dropdown ***/
+
+.dropdown {
+    display: flex;
+    position: relative;
+}
+
+.dropdown:hover .dropdown-contenu {
+    display: flex;
+    flex-direction: column;
+    left: 35%;
+    position: absolute;
+    z-index: 1;  
+}
+
+.dropdown-contenu {
+    display: none;
+    width: 250px;
+    margin-left: 10px;
+    background-color: rgb(61, 60, 60);
+}
+
+.dropdown-contenu a:hover {
+    background-color: orangered;
+}
+
+.dropdown-contenu, .dropdown-contenu a {
+    border: 1px solid whitesmoke;
+    color: black;
+}
+
 
 /***** Header ****/
 
@@ -135,21 +174,41 @@ footer {
 
 
 /**** Responsive ****/
-@media screen and (max-width:768px) {
 
-    nav ul {
-        transition: transform 0.5s ease-out;
-        transform: translateX(-100%);
-    }
+@media screen and (min-width: 769px) {
     
-}
-/*** Navgation responsive pour tablette et ordinateur ***/
-@media screen and (min-width:769px){
-    
-    #btn-burger{
+    #btn-burger {
         display: none;
     }
 
-    
+    nav {
+        justify-content: center;
+    }
 
+    .liens {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        transform: translateX(0);
+    }
+
+    .liens li {
+        padding: 10px;
+    }
+
+    .dropdown {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dropdown-contenu {
+        margin-left: 0;
+    }
+
+    .dropdown:hover .dropdown-contenu {
+        flex-direction: column;
+        top: 100%;
+        left: 0%;
+    }
+    
 }
