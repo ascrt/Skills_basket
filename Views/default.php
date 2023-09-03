@@ -19,8 +19,9 @@
                         <a href="#"> Catégories</a>
                         <!-- Dropdown contenu -->
                         <div class="dropdown-contenu">
-                            <a href="#"> Catégorie 1</a>
-                            <a href="#"> Catégorie 2</a>
+                            <?php foreach ($categories as $categorie): ?>
+                                <a href="#"> <?= $categorie->category_title;?> </a>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </li>
