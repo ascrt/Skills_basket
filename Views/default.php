@@ -20,7 +20,7 @@
                         <!-- Dropdown contenu -->
                         <div class="dropdown-contenu">
                             <?php foreach ($categories as $categorie): ?>
-                                <a href="#"> <?= $categorie->category_title;?> </a>
+                                <a href="/category/<?=$categorie->category_title?>/<?= $categorie->id?>"> <?= $categorie->category_title;?> </a>
                             <?php endforeach; ?>
                         </div>
                     </div>

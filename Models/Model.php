@@ -75,6 +75,19 @@ class Model extends Db {
         return $query->fetch();
     }
 
+
+    //Jointure SQL 
+
+    public function joinSQL(int $id ) {
+        $query = $this->requete("SELECT * FROM articles
+                LEFT JOIN category
+                ON articles.category_id = category.id 
+                WHERE category.id = $id");
+        
+        return $query->fetchAll();
+            
+    }
+
     /*** CREATE ***/
 
     public function create(Model $model) {
