@@ -1,4 +1,4 @@
-<?php $onglet = "Attaque du cercle";?>
+<?php $onglet = "Finitions";?>
 
 <?php foreach ($articlesAtkCercle as $articleAtkCercle): ?>
     
