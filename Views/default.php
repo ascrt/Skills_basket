@@ -16,7 +16,7 @@
                 <li>
                     <!-- dropdown  -->
                     <div class="dropdown">
-                        <a href="#"> Catégories</a>
+                        <a href="/"> Catégories</a>
                         <!-- Dropdown contenu -->
                         <div class="dropdown-contenu">
                             <?php foreach ($categories as $categorie): ?>
@@ -25,7 +25,7 @@
                         </div>
                     </div>
                 </li>
-                <li><a href="#"> Login </a></li>
+                <li><a href="/users/login"> Login </a></li>
                 <li><a href="#"> Contact </a></li>
             </ul>
             <!-- Bouton burger -->

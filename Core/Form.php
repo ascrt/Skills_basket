@@ -128,7 +128,7 @@ class Form {
         $this->formCode .= "<select name='$nom'";
 
         //On ajoute les attributs
-        $this->formCode .= $attributs ? $this->ajouterAttributs($attributs). '>' : '>';
+        $this->formCode .= $attributs ? $this->ajoutAttributs($attributs). '>' : '>';
 
         //On ajoute les options
         foreach($options as $valeur => $texte) {
@@ -152,7 +152,7 @@ class Form {
         $this->formCode .= $attributs ? $this->ajoutAttributs($attributs) : '';
 
         //Balise de fin
-        $this->formCode .= '> $texte </button>';
+        $this->formCode .= "> $texte </button>";
 
         return $this;
     }
