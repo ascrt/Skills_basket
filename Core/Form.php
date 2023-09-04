@@ -94,7 +94,7 @@ class Form {
     }
 
     //Ajout des inputs
-    public function ajoutInputs(string $type, string $name, array $attributs = []): self {
+    public function ajoutInput(string $type, string $name, array $attributs = []): self {
 
         //Balise d'ouverture
         $this->formCode .= "<input type='$type' name='$name'";
