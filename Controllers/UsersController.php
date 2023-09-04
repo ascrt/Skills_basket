@@ -53,7 +53,7 @@ class UsersController extends Controller {
             ->ajoutBouton("S'inscrire")
             ->finForm();
 
-            $this->render('user/register', ["registerForm" => $form->create(), 'categories' => $categories]);
+            $this->render('users/register', ["registerForm" => $form->create(), 'categories' => $categories]);
 
     }
 

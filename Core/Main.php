@@ -8,6 +8,9 @@ class Main {
 
     public function start() {
 
+        /**** Demarrer uns session ****/
+        session_start();
+
         //On retire le dernier slash de l'URL
         $uri = $_SERVER['REQUEST_URI'];
         
