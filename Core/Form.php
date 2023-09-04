@@ -15,19 +15,20 @@ class Form {
     //Validation des champs
     //Parametre $form: tableau issue ($_POST, $_GET)
     //Parametre $champs: tableaulistant les champs obligatoire
+
     public static function validate(array $form, array $champs) {
 
         //On boucles $champs
-        foreach ($champs as $champ) {
-
+        foreach($champs as $champ) {
+            
             //si le champs est absent ou vide du tableau formulaire
             if(!isset($form[$champ]) || empty($form[$champ])) {
-
                 return false;
             }
         }
-
+        var_dump($form);
         return true;
+    
     }
 
     //Ajout des attributs 
@@ -49,7 +50,7 @@ class Form {
                 $str = $str . "$attribut";
             } else {
                 //On ajoute attribut = valeur
-                $str .= "$attribut='$valeur'";
+                $str .= "$attribut=\"$valeur\"";
             }
         }
 
@@ -60,8 +61,8 @@ class Form {
 
     //Balise d'ouverture du formualaire
 
-    public function debutForm(string $method = "POST", string $action ="#", array $attributs = []): self {
-        $this->formCode .= "<form action='$action' methode='$method'";
+    public function debutForm(string $method = "post", string $action ="#", array $attributs = []): self {
+        $this->formCode .= "<form action='$action' method='$method'";
 
         //Ajout des attributs on utilise une ternaire
         $this->formCode .= $attributs ? $this->ajoutAttributs($attributs). '>' : '>';
@@ -97,7 +98,7 @@ class Form {
     public function ajoutInput(string $type, string $name, array $attributs = []): self {
 
         //Balise d'ouverture
-        $this->formCode .= "<input type='$type' name='$name'";
+        $this->formCode .= "<input type='$type' name='$name' ";
 
         //Ajout des attributs
         $this->formCode .= $attributs ? $this->ajoutAttributs($attributs). '>' : '>';
