@@ -106,19 +106,19 @@ class Model extends Db {
             }
         }
 
-        var_dump($champs, $valeurs, $inter);
+        //var_dump($champs, $valeurs, $inter);
         $listechamps = implode(' ,', $champs);
         $listinter = implode(' ,', $inter);
 
-        var_dump($listechamps, $listinter);
-        echo "INSERT INTO $this->table ($listechamps) 
-        VALUES ($listinter)";
-        /**return $this->requete("INSERT INTO $this->table ($listechamps) 
-                                VALUES ($listinter)", $valeurs);**/
+        //var_dump($listechamps, $listinter);
+        /**echo "INSERT INTO $this->table ($listechamps) 
+        VALUES ($listinter)";**/
+        return $this->requete("INSERT INTO $this->table ($listechamps) 
+                                VALUES ($listinter)", $valeurs);
     }
 
     //Methode pour hydrater un objet
-    public function hydrate(array $donnees) {
+    public function hydrate($donnees) {
 
         
         foreach($donnees as $key => $value) {
@@ -158,10 +158,10 @@ class Model extends Db {
         var_dump($champs, $valeurs);
 
         $listechamps = implode(', ', $champs);
-        var_dump($listechamps);
+        /**var_dump($listechamps);**/
         
-        /*return $this->requete("UPDATE $this->table SET $listechamps WHERE id = ?", $valeurs);*/
-        echo "UPDATE $this->table SET $listechamps WHERE id = ?";
+        return $this->requete("UPDATE $this->table SET $listechamps WHERE id = ?", $valeurs);
+        //echo "UPDATE $this->table SET $listechamps WHERE id = ?";
     }
 
     /*** DELETE ***/

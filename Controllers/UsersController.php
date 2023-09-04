@@ -15,14 +15,44 @@ class UsersController extends Controller {
         //Formulaire de login
         $form = new Form();
         $form->debutForm()
-            ->ajoutLabel("email", "E-mail:")
-            ->ajoutInput("email", "email", ['id'=> 'email'])
+            ->ajoutLabel("mail", "E-mail:")
+            ->ajoutInput("mail", "mail", ['id'=> 'email'])
             ->ajoutLabel("password", "Password:")
             ->ajoutInput("password", "password",['id' => 'password'])
             ->ajoutBouton('Connexion')
             ->finForm();
 
         //Traitement du formulaire
+
+        if(Form::validate($_POST,['mail', "password"])) {
+
+            $userModel = new UsersModel();
+
+            $userArray = $userModel->userByMail(strip_tags($_POST['mail']));
+
+            //si l'utilisateur n'existe pas 
+            if(!$userArray) {
+                $_SESSION['erreur'] = "L'adresse mail et/ou le mot de passe est incorrect";
+                header('Location: /users/login');
+                exit;
+            }
+
+            //L'utilisateur existe
+            $user = $userModel->hydrate($userArray);
+
+            if(password_verify($_POST['password'], $user->getPassword())) {
+
+                //Mot de passe correct
+                //On crée la session
+                $user->setSession();
+                header('Location: /users/profil');
+            } else {
+                $_SESSION['erreur'] = "L'adresse mail et/ou le mot de passe est incorrect";
+                header('Location: /users/login');
+                exit;
+            }
+
+        }
         
         /*** Affiche toutes les categories ***/
         $categoryModel = new CategoryModel();
@@ -116,7 +146,33 @@ class UsersController extends Controller {
          $categoryModel = new CategoryModel();
          $categories = $categoryModel->readAll();
 
-        $this->render('/users/success', ['categorie' => $categories]);
+        $this->render('/users/success', ['categories' => $categories]);
+    }
+
+    public function profil() {
+
+        if(!isset($_SESSION['user'])) {
+            header('Location: /users/login');
+            exit;
+        }
+        
+        /*** Affiche toutes les categories ***/
+        $categoryModel = new CategoryModel();
+        $categories = $categoryModel->readAll();
+
+        /*** Affiche l'utilisateur ***/
+        $usersModel = new UsersModel();
+        $user = $usersModel->userByMail(strip_tags($_SESSION['user']['mail']));
+
+        $this->render('users/profil', ['categories' => $categories, 'user' => $user]);
+
+    }
+
+    public function logout() {
+        unset($_SESSION['user']);
+        header('Location: /users/login');
+        exit;
+
     }
 
         
