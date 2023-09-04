@@ -90,14 +90,14 @@ class Model extends Db {
 
     /*** CREATE ***/
 
-    public function create(Model $model) {
+    public function create() {
 
         //On aura 3 tableau
         $champs = [];
         $inter = [];
         $valeurs = [];
 
-        foreach($model as $champ => $valeur) {
+        foreach($this as $champ => $valeur) {
             //On veut insert into articles (..,..,..,) values(?,?, ?)
             if($valeur != null && $champ != "db" && $champ != 'table') {
                 array_push($champs, "$champ");
@@ -138,13 +138,13 @@ class Model extends Db {
 
     /*** UPDATE ***/
 
-    public function update(int $id, model $model) {
+    public function update() {
 
         //Initialisation des tableau champs et valeurs
         $champs = [];
         $valeurs = [];
 
-        foreach($model as $champ => $valeur) {
+        foreach($this as $champ => $valeur) {
             
             //On veut update articles title = ?, content = ? where id = ?
             if($valeur != null && $champ != 'db' && $champ != 'table') {
