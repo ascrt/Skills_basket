@@ -113,8 +113,8 @@ class Model extends Db {
         //var_dump($listechamps, $listinter);
         /**echo "INSERT INTO $this->table ($listechamps) 
         VALUES ($listinter)";**/
-        /*return $this->requete("INSERT INTO $this->table ($listechamps) 
-                                VALUES ($listinter)", $valeurs);**/
+        return $this->requete("INSERT INTO $this->table ($listechamps) 
+                                VALUES ($listinter)", $valeurs);
     }
 
     //Methode pour hydrater un objet
