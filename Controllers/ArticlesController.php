@@ -18,7 +18,7 @@ class ArticlesController extends Controller {
         $categories = $categoryModel->readAll();
 
         //On envoie le resultat dans une vue
-        $this->render('/articles/index', compact('articles', 'categories'));
+        $this->render('articles/index', compact('articles', 'categories'));
     }
 
 
