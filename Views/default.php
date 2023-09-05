@@ -25,7 +25,12 @@
                         </div>
                     </div>
                 </li>
-                <li><a href="/users/login"> Login </a></li>
+                <?php if(isset($_SESSION['user'])): ?>
+                    <li> <a href="/users/profil"> Profil </a></li>
+                    <li><a href="/users/logout"> Deconnexion </a></li>
+                <?php else : ?>
+                    <li><a href="/users/login"> Login </a></li>
+                <?php endif; ?>
                 <li><a href="#"> Contact </a></li>
             </ul>
             <!-- Bouton burger -->

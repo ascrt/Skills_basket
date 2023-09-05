@@ -15,6 +15,7 @@ class UsersModel extends Model {
     public function __construct()
     {
         $this->table = "users";
+        $this->role = "User";
     }
 
     //Getter
@@ -34,11 +35,8 @@ class UsersModel extends Model {
         return $this->password;
     }
 
-    public function getRole():array {
-        $role = $this->role;
-        $role[] = "ROLE_USER";
-        return array_unique($role);
-
+    public function getRole() {
+        return $this->role;
     }
 
     //Setter
@@ -63,7 +61,7 @@ class UsersModel extends Model {
     }
 
     public function setRole($role): self {
-        $this->role = json_decode($role);
+        $this->role = $role;
         return $this;
     }
 
