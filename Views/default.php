@@ -25,7 +25,10 @@
                         </div>
                     </div>
                 </li>
-                <?php if(isset($_SESSION['user'])): ?>
+                <?php if(isset($_SESSION['user'])  && !empty($_SESSION['user']['id'])): ?>
+                    <?php if(isset($_SESSION['user']['role']) && $_SESSION['user']['role'] === "Admin") :?>
+                        <li> <a href="/admin"> Administration </a></li>
+                    <?php endif; ?>
                     <li> <a href="/users/profil"> Profil </a></li>
                     <li><a href="/users/logout"> Deconnexion </a></li>
                 <?php else : ?>

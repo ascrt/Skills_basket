@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Core\Form;
 use App\Models\ArticlesModel;
 use App\Models\CategoryModel;
 
@@ -33,6 +34,7 @@ class ArticlesController extends Controller {
 
         $this->render('/articles/single', compact('article', 'categories'));
     }
+
 }
 
 

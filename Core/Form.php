@@ -24,9 +24,10 @@ class Form {
             //si le champs est absent ou vide du tableau formulaire
             if(!isset($form[$champ]) || empty($form[$champ])) {
                 return false;
+                echo "Un champ est vide";
             }
         }
-        var_dump($form);
+        //var_dump($form);
         return true;
     
     }
@@ -111,7 +112,7 @@ class Form {
     public function ajoutTextarea(string $name,string $valeur = '', array $attributs = []): self {
         
         //Balise d'ouverture
-        $this->formCode .= "<textarea name='$name'";
+        $this->formCode .= "<textarea name='$name' ";
 
         //Ajout des attributs
         $this->formCode .= $attributs ? $this->ajoutAttributs($attributs) : '';
@@ -126,7 +127,7 @@ class Form {
 
     public function ajoutSelect(string $nom, array $options, array $attributs = []):self {
 
-        $this->formCode .= "<select name='$nom'";
+        $this->formCode .= "<select name='$nom' ";
 
         //On ajoute les attributs
         $this->formCode .= $attributs ? $this->ajoutAttributs($attributs). '>' : '>';
