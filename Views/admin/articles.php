@@ -20,7 +20,7 @@
                 <td> <?= $article->title ;?> </td>
                 <td> <?= $article->content ;?> </td>
                 <td> <?= $article->date ;?> </td>
-                <td> <a href="#"> Modifier </a> </td>
+                <td> <a href="/admin/modifier/<?= $article->id?>"> Modifier </a> </td>
                 <td> <a href="#"> Supprimer</a> </td>    
             </tr>
         <?php endforeach; ?>

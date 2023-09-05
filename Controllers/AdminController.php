@@ -102,6 +102,34 @@ class AdminController extends Controller {
 
 
     /**** Modifier un article ****/
+    public function modifier(int $id) {
+
+        if($this->isAdmin()) {
+
+            /*** Affiche toutes les categories ***/
+            $categoryModel = new CategoryModel();
+            $categories = $categoryModel->readAll();
+
+            $articlesModel = new ArticlesModel();
+            $article = $articlesModel->read($id);
+
+            //Formulaire 
+            $form = new Form();
+            $form->debutForm()
+                ->ajoutLabel("title", "Titre:")
+                ->ajoutInput("text", "title", ['id' => 'title', 'value' => $article->title])
+                ->ajoutLabel("content", "Contenu:")
+                ->ajoutTextarea('content',$article->content ,['id' => 'content'])
+                ->ajoutLabel('catgories', "Categorie:")
+                ->ajoutSelect('categorie', ["1" => "Tir", "2" => "Finitions", "3" => "Dribble"], ['id' => "categories"])
+                ->ajoutBouton("Modifier")
+                ->finForm();
+            
+            $this->render('admin/modifierArticle', ['modiForm' => $form->create(), 'article' => $article, 'categories' => $categories]);
+
+        }
+
+    }
 
 
 
