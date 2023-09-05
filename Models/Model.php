@@ -113,8 +113,8 @@ class Model extends Db {
         //var_dump($listechamps, $listinter);
         /**echo "INSERT INTO $this->table ($listechamps) 
         VALUES ($listinter)";**/
-        return $this->requete("INSERT INTO $this->table ($listechamps) 
-                                VALUES ($listinter)", $valeurs);
+        /*return $this->requete("INSERT INTO $this->table ($listechamps) 
+                                VALUES ($listinter)", $valeurs);**/
     }
 
     //Methode pour hydrater un objet
@@ -138,7 +138,7 @@ class Model extends Db {
 
     /*** UPDATE ***/
 
-    public function update() {
+    public function update(int $id) {
 
         //Initialisation des tableau champs et valeurs
         $champs = [];
@@ -155,7 +155,7 @@ class Model extends Db {
 
         //On ajoute l'id au tableau de valeurs
         array_push($valeurs, $id);
-        var_dump($champs, $valeurs);
+        //var_dump($champs, $valeurs);
 
         $listechamps = implode(', ', $champs);
         /**var_dump($listechamps);**/

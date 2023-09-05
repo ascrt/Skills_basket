@@ -83,7 +83,7 @@ class AdminController extends Controller {
                 $content = $_POST['content'];
                 $category_id = intval($_POST['categorie']);
                 
-                /** hydratation **/
+                //Insertition avec les setter
                 $articlesModel = new ArticlesModel();
                 $articlesModel->setTitle($title)
                             ->setContent($content)
@@ -126,6 +126,32 @@ class AdminController extends Controller {
                 ->finForm();
             
             $this->render('admin/modifierArticle', ['modiForm' => $form->create(), 'article' => $article, 'categories' => $categories]);
+
+            //Traitement du formulaire
+
+            if (Form::validate($_POST, ['title', 'content', 'categorie'])) {
+
+                //Verification du titre
+                if(strlen($_POST['title']) > 64){
+                    $_SESSION['erreur'] = "Titre invalide";
+                    header('Location: /admin/ajouter');
+                }
+
+                //Variable pour hydrater
+                $title = $_POST['title'];
+                $content = $_POST['content'];
+                $category_id = intval($_POST['categorie']);
+
+                //Insertition avec les setter
+                $article = new ArticlesModel();
+                $article->setId($id)
+                        ->setTitle($title)
+                        ->setContent($content)
+                        ->setCategoryId($category_id);
+                
+                //Modification dans la base
+                $article->update($id);
+            }
 
         }
 

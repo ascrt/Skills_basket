@@ -21,7 +21,7 @@
                 <td> <?= $article->content ;?> </td>
                 <td> <?= $article->date ;?> </td>
                 <td> <a href="/admin/modifier/<?= $article->id?>"> Modifier </a> </td>
-                <td> <a href="#"> Supprimer</a> </td>    
+                <td> <a href="/admin/supprimer/<?= $article->id?>"> Supprimer</a> </td>    
             </tr>
         <?php endforeach; ?>
     </tbody>
