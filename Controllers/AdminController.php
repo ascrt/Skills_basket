@@ -76,6 +76,7 @@ class AdminController extends Controller {
                 if(strlen($_POST['title']) > 64){
                     $_SESSION['erreur'] = "Titre invalide";
                     header('Location: /admin/ajouter');
+                    exit;
                 }
 
                 //Variable pour hydrater

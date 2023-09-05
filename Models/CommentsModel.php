@@ -36,15 +36,15 @@ class CommentsModel extends Model {
         return $this;
     }
     public function setContent($content): self {
-        $this->id = $content;
+        $this->content = $content;
         return $this;
     }
     public function setDate($date): self {
-        $this->id = $date;
+        $this->date = $date;
         return $this;
     }
     public function setUsersId($users_id): self {
-        $this->id = $users_id;
+        $this->users_id = $users_id;
         return $this;
     }
 }

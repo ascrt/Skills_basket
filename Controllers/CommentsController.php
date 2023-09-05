@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Core\Form;
 use App\Models\CategoryModel;
+use App\Models\CommentsModel;
 
 class CommentsController extends Controller {
 
@@ -30,7 +31,26 @@ class CommentsController extends Controller {
 
             //Traitement du formulaire
             if (Form::validate($_POST, ["content"])) {
+
+                if(strlen($_POST['content']) > 255) {
+                    $_SESSION['erreur'] = "Contenu invalide";
+                    header('Location: /users/profil');
+                    exit;
+                }
+
+                $content = $_POST['content'];
+
+                //hydrater
+                $comment = new CommentsModel();
+                $comment->setContent($content)
+                        ->setUsersId($_SESSION['user']['id']);
                 
+                //Envoi ver la base
+                $comment->create();
+
+                header('Location: /users/profil');
+                exit;
+
             }
 
         } else {
