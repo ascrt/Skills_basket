@@ -32,6 +32,16 @@ h2 {
     font-family: 'Prompt';
 }
 
+/*** Message d'erreur ***/
+
+.erreur {
+    width: 35%;
+    margin: auto;
+    border: 1px solid red;
+    background-color: rgb(219, 104, 104);
+    color: whitesmoke;
+}
+
 /**** Navgiation ****/
 
 /*** nav ***/
@@ -42,7 +52,7 @@ nav {
     position: sticky;
     top: 0;
     left: 0;
-    background-color:rgb(179, 54, 9);
+    background-color: rgb(179, 54, 9);
 }
 
 /*** Le burger ***/
@@ -244,6 +254,10 @@ footer nav {
     padding: 15px;
 }
 
+footer nav a {
+    color: whitesmoke;
+}
+
 footer div.social {
     display: flex;
     justify-content: center;
@@ -266,6 +280,10 @@ footer div.social {
     font-size: 1.5em;
 }
 
+footer p {
+    color: whitesmoke;
+    text-align: center;
+}
 
 
 /**** Responsive ****/
@@ -305,6 +323,12 @@ footer div.social {
         flex-direction: column;
         top: 100%;
         left: 0%;
+    }
+
+    footer nav {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 15px;
     }
     
 }

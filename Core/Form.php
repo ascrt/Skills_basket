@@ -24,7 +24,6 @@ class Form {
             //si le champs est absent ou vide du tableau formulaire
             if(!isset($form[$champ]) || empty($form[$champ])) {
                 return false;
-                echo "Un champ est vide";
             }
         }
         //var_dump($form);

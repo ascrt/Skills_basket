@@ -48,7 +48,7 @@
     </header>
     <main>
         <?php if(!empty($_SESSION['erreur'])) : ?>
-            <div>
+            <div class="erreur">
                 <?php echo $_SESSION['erreur']; unset($_SESSION['erreur']); ?>
             </div>
         <?php endif ;?>
@@ -69,7 +69,7 @@
         <p> &copy; 2023 tout droit réservés</p>
     </footer>
 
-    
+
     <script src="/assets/js/script.js"></script>
 </body>
 </html>

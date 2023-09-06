@@ -21,6 +21,13 @@ class UsersController extends Controller {
             ->ajoutInput("password", "password",['id' => 'password'])
             ->ajoutBouton('Connexion')
             ->finForm();
+        
+        /*** Affiche toutes les categories ***/
+        $categoryModel = new CategoryModel();
+        $categories = $categoryModel->readAll();
+        
+        //rendu
+        $this->render('users/login', ['loginForm' => $form->create(), 'categories' => $categories]);
 
         //Traitement du formulaire
 
@@ -53,13 +60,7 @@ class UsersController extends Controller {
             }
 
         }
-        
-        /*** Affiche toutes les categories ***/
-        $categoryModel = new CategoryModel();
-        $categories = $categoryModel->readAll();
 
-        //rendu
-        $this->render('users/login', ['loginForm' => $form->create(), 'categories' => $categories]);
     }
 
     //Inscription

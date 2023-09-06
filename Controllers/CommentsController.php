@@ -67,11 +67,15 @@ class CommentsController extends Controller {
         $articleModel = new ArticlesModel();
         $article = $articleModel->read($id);
 
+        /*** Affiche toutes les categories ***/
+        $categoryModel = new CategoryModel();
+        $categories = $categoryModel->readAll();
+
         $commentsModel = new CommentsModel();
         $comments = $commentsModel->joinSQL2($id);
 
         //Rendu
-        $this->render('/comments/afficher', ['comments' => $comments, 'article' => $article]);
+        $this->render('/comments/afficher', ['comments' => $comments, 'article' => $article, 'categories' => $categories]);
     
     }
 
