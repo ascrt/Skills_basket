@@ -63,5 +63,18 @@ class CommentsModel extends Model {
         $this->users_id = $users_id;
         return $this;
     }
+
+    //Methode
+    
+    public function joinSQL2(int $id) {
+       $query = $this->requete("SELECT comments.content, comments.date, users.pseudo, articles.id FROM comments INNER JOIN users 
+                        ON comments.users_id = users.id
+                        INNER JOIN articles
+                        ON comments.article_id = articles.id
+                        WHERE article_id = $id");
+
+        return $query->fetchAll();
+    }
+
 }
 ?>

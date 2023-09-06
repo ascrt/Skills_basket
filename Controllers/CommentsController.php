@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Core\Form;
-use App\Models\ArticlesCommentsModel;
+use App\Models\ArticlesModel;
 use App\Models\CategoryModel;
 use App\Models\CommentsModel;
 
@@ -44,9 +44,10 @@ class CommentsController extends Controller {
                 //hydrater
                 $comment = new CommentsModel();
                 $comment->setContent($content)
+                        ->setArticleId($id)
                         ->setUsersId($_SESSION['user']['id']);
 
-               //Envoi ver la base
+               //Envoi vers la base
                 $comment->create();
 
                 header('Location: /users/profil');
@@ -58,6 +59,20 @@ class CommentsController extends Controller {
             header('Location: /users/login');
             exit;
         }
+    }
+
+    public function afficher(int $id) {
+
+        /** Recuperer l'id de l'article **/
+        $articleModel = new ArticlesModel();
+        $article = $articleModel->read($id);
+
+        $commentsModel = new CommentsModel();
+        $comments = $commentsModel->joinSQL2($id);
+
+        //Rendu
+        $this->render('/comments/afficher', ['comments' => $comments, 'article' => $article]);
+    
     }
 
 }
