@@ -32,14 +32,23 @@ h2 {
     font-family: 'Prompt';
 }
 
-/*** Message d'erreur ***/
+/*** Message de la session ***/
 
-.erreur {
+.erreur, .message {
     width: 35%;
     margin: auto;
+    color: whitesmoke;
+}
+
+.erreur {
     border: 1px solid red;
     background-color: rgb(219, 104, 104);
-    color: whitesmoke;
+
+}
+
+.message {
+    border: 1px solid green;
+    background-color: rgb(28, 173, 28);
 }
 
 /**** Navgiation ****/
