@@ -12,7 +12,6 @@
         <!-- Liens -->
             <ul class="liens">
                 <li><a href="/"> Acceuil</a></li>
-                <li><a href="/articles"> Articles</a></li>
                 <li>
                     <!-- dropdown  -->
                     <div class="dropdown">

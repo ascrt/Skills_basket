@@ -11,10 +11,10 @@ class CategoryController extends Controller {
     }
 
 
-    public function tirs() {
+    public function tirs($id) {
         
         $categorieModel = new CategoryModel();
-        $articlesTir = $categorieModel->joinSQL(1);
+        $articlesTir = $categorieModel->joinSQL($id);
 
         /*** Affiche toutes les categories ***/
         $categoryModel = new CategoryModel();

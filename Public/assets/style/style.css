@@ -16,6 +16,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Noto Sans';
+    position: relative;
 }
 
 li {
@@ -30,23 +31,17 @@ a {
 h2 {
     font-family: 'Prompt';
 }
-/**** Grille du site ****/
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(7, 1fr);
-}
 
 /**** Navgiation ****/
 
 /*** nav ***/
 nav {
-    grid-column: 1 / 8;
-    grid-row: 1/ 2;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    left: 0;
     background-color:rgb(179, 54, 9);
 }
 
@@ -97,10 +92,13 @@ nav {
 nav ul {
     transform: translateX(-100%);
 }
+
 .liens {
     width: 60%;
     padding: 5px;
     margin-left: 5px;
+    transition: transform 0.7s ease-out;
+    
 }
 
 .liens li {
@@ -152,9 +150,7 @@ nav ul {
 /***** Header ****/
 
 header {
-    min-height: 20vh;
-    grid-column: 1 / 8;
-    grid-row: 2 / 4;
+    min-height: 35vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -174,23 +170,76 @@ header h1 {
 /**** Main ***/
 
 main {
-    grid-column: 1 / 8;
-    grid-row: 4 / 7;
     background-color: whitesmoke;
+    min-height: 70vh;
+    margin: 0;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
 }
 
+
+/*** section ***/
+section {
+    margin: 0;
+    padding: 15px;
+    text-align: justify;
+}
+
+section h2 {
+    text-align: left;
+}
+
+/**Liens dans un article et les commentaires **/
+.plus, .comments {
+    margin: auto;
+    padding: 15px;
+    background-color: rgb(41, 121, 241);
+    border-radius: 5px;
+}
+
+
+.comments {
+    width: 40%;
+}
+
+.plus a, .comments a {
+    color: whitesmoke;
+}
+
+.plus:hover, .comments:hover {
+    background-color: cornflowerblue;
+    box-shadow: 3px 4px 5px black;
+}
+
+
+/*** Formulaire ***/
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    height: 50vw;
+    width: 70vw;
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: cornflowerblue;
+    color: whitesmoke;
+}
 
 
 /***Footer ***/
 footer {
+    min-height: 15vh;
+    padding-top: 15px;
     background-color: rgb(179, 54, 9);
-    grid-column: 1 / 8;
-    grid-row: 7/ 8;
 }
 
 
 /**** Responsive ****/
 
+/*** Navigation pour tablette et ordinateur ***/
 @media screen and (min-width: 769px) {
     
     #btn-burger {
@@ -227,4 +276,47 @@ footer {
         left: 0%;
     }
     
+}
+
+/*** Smartphone ***/
+@media screen and (max-width: 768px) {
+
+    .plus {
+        width: 45%;
+    }
+    
+}
+
+/*** Tablette ***/
+@media screen and (min-width: 769px) and (max-width: 992px) {
+
+    .plus {
+        width: 15%;
+    }
+
+    form {
+        height: 30vw;
+        width: 40vw;
+    }
+
+}
+
+
+
+/**** Ordinateur ***/
+
+@media screen and (min-width: 993px) {
+
+    .plus {
+        width: 10%;
+    }
+
+    .comments {
+        width: 20%;
+    }
+
+    form {
+        height: 15vw;
+        width: 30vw;
+    }
 }

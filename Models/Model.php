@@ -85,7 +85,7 @@ class Model extends Db {
     //Jointure SQL 
 
     public function joinSQL(int $id ) {
-        $query = $this->requete("SELECT * FROM articles
+        $query = $this->requete("SELECT articles.id, articles.title, articles.content, articles.date FROM articles
                 LEFT JOIN category
                 ON articles.category_id = category.id 
                 WHERE category.id = $id");

@@ -5,7 +5,9 @@
     <article>
         <h2> <?= $articleAtkCercle->title; ?> </h2>
         <p> <?= $articleAtkCercle->content;?> </p>
-        <a href="/articles/single/<?= $articleAtkCercle->id?>"> Voir plus </a>
+        <div class="plus">
+            <a href="/articles/single/<?= $articleAtkCercle->id?>"> Voir plus </a>
+        </div>
     </article>
 
 <?php endforeach ?>
