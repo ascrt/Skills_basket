@@ -3,12 +3,13 @@
 namespace App\Controllers;
 
 use App\Core\Form;
+use App\Models\ArticlesCommentsModel;
 use App\Models\CategoryModel;
 use App\Models\CommentsModel;
 
 class CommentsController extends Controller {
 
-    public function ajouter() {
+    public function ajouter(int $id) {
 
         //Verification si on est connecté
         if(isset($_SESSION['user'])) {
@@ -44,13 +45,12 @@ class CommentsController extends Controller {
                 $comment = new CommentsModel();
                 $comment->setContent($content)
                         ->setUsersId($_SESSION['user']['id']);
-                
-                //Envoi ver la base
+
+               //Envoi ver la base
                 $comment->create();
 
                 header('Location: /users/profil');
                 exit;
-
             }
 
         } else {

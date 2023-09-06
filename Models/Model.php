@@ -75,6 +75,12 @@ class Model extends Db {
         return $query->fetch();
     }
 
+    //Lire selon l'user_id
+    public function readUsersId(int $users_id) {
+        $query = $this->requete('SELECT * FROM ' . $this->table . ' WHERE users_id=' . $users_id);
+        return $query->fetch();       
+    }
+
 
     //Jointure SQL 
 
