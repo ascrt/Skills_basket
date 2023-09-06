@@ -231,10 +231,41 @@ form {
 
 /***Footer ***/
 footer {
-    min-height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 20vh;
     padding-top: 15px;
+    padding-bottom: 15px;
     background-color: rgb(179, 54, 9);
 }
+
+footer nav {
+    padding: 15px;
+}
+
+footer div.social {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 5px;
+}
+
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    margin-right: 15px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+}
+
+.circle i {
+    font-size: 1.5em;
+}
+
 
 
 /**** Responsive ****/
