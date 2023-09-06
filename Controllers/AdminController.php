@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\ArticlesModel;
 use App\Models\CategoryModel;
 use App\Core\Form;
+use App\Models\CommentsModel;
 
 class AdminController extends Controller {
 
@@ -26,6 +27,7 @@ class AdminController extends Controller {
     }
 
     public function articles() {
+
         //Verification isAdmin
         if($this->isAdmin()) {
 
@@ -169,6 +171,35 @@ class AdminController extends Controller {
             $article->delete($id);
 
             $_SESSION['message'] = "Article supprimé";
+            header("Location: /admin");
+        }
+
+    }
+
+    /***** Commentaires ****/
+    public function comments() {
+
+        if($this->isAdmin()) {
+            
+            /*** Affiche toutes les categories ***/
+            $categoryModel = new CategoryModel();
+            $categories = $categoryModel->readAll(); 
+            
+            /*** Affiche tous les commentaires ***/
+            $commentsModel = new CommentsModel();
+            $comments = $commentsModel->readAll();
+
+            $this->render("admin/comments", ["categories" => $categories,'comments' => $comments]);
+        }
+    }
+
+    public function supprimerComments(int $id) {
+
+        if($this->isAdmin()) {
+            $comment = new CommentsModel();
+            $comment->delete($id);
+
+            $_SESSION['message'] = "Commentaire supprimé";
             header("Location: /admin");
         }
 
