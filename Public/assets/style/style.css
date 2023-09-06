@@ -1,3 +1,12 @@
+/***** Import des polices ****/
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Prompt:wght@500&family=Raleway&display=swap');
+/** Polices pour les liens : Raleway**/
+/** Polices pour le texte : Noto Sans **/
+/** Polices pour le titre : Prompt **/
+
+
+
 /*** RESET ***/
 * {
     box-sizing: border-box;
@@ -6,6 +15,7 @@
 body{
     margin: 0;
     padding: 0;
+    font-family: 'Noto Sans';
 }
 
 li {
@@ -13,7 +23,12 @@ li {
 }
 
 a {
+    font-family: 'Raleway';
     text-decoration: none;
+}
+
+h2 {
+    font-family: 'Prompt';
 }
 /**** Grille du site ****/
 
@@ -32,7 +47,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgb(61, 60, 60);
+    background-color:rgb(179, 54, 9);
 }
 
 /*** Le burger ***/
@@ -99,7 +114,7 @@ nav ul {
 }
 
 .liens li a:hover {
-    color: lightgoldenrodyellow;
+    color: black;
 }
 
 /*** Dropdown ***/
@@ -121,11 +136,11 @@ nav ul {
     display: none;
     width: 250px;
     margin-left: 10px;
-    background-color: rgb(61, 60, 60);
+    background-color: rgb(179, 54, 9);
 }
 
 .dropdown-contenu a:hover {
-    background-color: orangered;
+    background-color: rgb(211, 83, 36);
 }
 
 .dropdown-contenu, .dropdown-contenu a {
@@ -161,13 +176,14 @@ header h1 {
 main {
     grid-column: 1 / 8;
     grid-row: 4 / 7;
-    background-color: red;
+    background-color: whitesmoke;
 }
+
 
 
 /***Footer ***/
 footer {
-    background-color: cornflowerblue;
+    background-color: rgb(179, 54, 9);
     grid-column: 1 / 8;
     grid-row: 7/ 8;
 }
