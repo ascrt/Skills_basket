@@ -8,6 +8,7 @@ class CommentsModel extends Model {
     protected $id;
     protected $content;
     protected $date;
+    protected $article_id;
     protected $users_id;
 
     //Constructeur
@@ -20,12 +21,19 @@ class CommentsModel extends Model {
     public function getId() {
         return $this->id;
     }
+
     public function getContent() {
         return $this->content;
     }
+
     public function getDate() {
         return $this->date;
     }
+
+    public function getArticleId() {
+        return $this->article_id;
+    }
+
     public function getUsersId() {
         return $this->users_id;
     }
@@ -35,14 +43,17 @@ class CommentsModel extends Model {
         $this->id = $id;
         return $this;
     }
+
     public function setContent($content): self {
         $this->content = $content;
         return $this;
     }
+
     public function setDate($date): self {
         $this->date = $date;
         return $this;
     }
+    
     public function setUsersId($users_id): self {
         $this->users_id = $users_id;
         return $this;
