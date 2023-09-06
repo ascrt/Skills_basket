@@ -53,7 +53,12 @@ class CommentsModel extends Model {
         $this->date = $date;
         return $this;
     }
-    
+
+    public function setArticleId($article_id): self {
+        $this->article_id = $article_id;
+        return $this;
+    }
+
     public function setUsersId($users_id): self {
         $this->users_id = $users_id;
         return $this;
