@@ -82,8 +82,8 @@ class AdminController extends Controller {
                 }
 
                 //Variable pour hydrater
-                $title = $_POST['title'];
-                $content = $_POST['content'];
+                $title = strip_tags($_POST['title']);
+                $content = strip_tags($_POST['content']);
                 $category_id = intval($_POST['categorie']);
                 
                 //Insertition avec les setter
@@ -141,8 +141,8 @@ class AdminController extends Controller {
                 }
 
                 //Variable pour hydrater
-                $title = $_POST['title'];
-                $content = $_POST['content'];
+                $title = strip_tags($_POST['title']);
+                $content = strip_tags($_POST['content']);
                 $category_id = intval($_POST['categorie']);
 
                 //Insertition avec les setter

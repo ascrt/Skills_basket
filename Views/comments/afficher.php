@@ -1,5 +1,3 @@
-<?php $onglet = "Commentaires" ?>
-
 <?php if(!$comments || empty($comments)) :?>
         <p> Soyez le premier à poster un commentaire </p>
 <?php else :?>
@@ -11,5 +9,3 @@
         <?php endforeach;?>
     </div>
 <?php endif; ?>
-<a href="/comments/ajouter/<?= $article->id;?>">Ajouter un commentaire </a>
-

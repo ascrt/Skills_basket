@@ -18,7 +18,7 @@
             <tr>
                 <td> <?= $article->id ;?> </td>
                 <td> <?= $article->title ;?> </td>
-                <td> <?= $article->content ;?> </td>
+                <td> <?= $article->content;?> </td>
                 <td> <?= $article->date ;?> </td>
                 <td> <a href="/admin/modifier/<?= $article->id?>"> Modifier </a> </td>
                 <td> <a href="/admin/supprimer/<?= $article->id?>"> Supprimer</a> </td>    

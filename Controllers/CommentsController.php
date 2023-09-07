@@ -62,21 +62,15 @@ class CommentsController extends Controller {
     }
 
     public function afficher(int $id) {
-
-        /** Recuperer l'id de l'article **/
-        $articleModel = new ArticlesModel();
-        $article = $articleModel->read($id);
-
-        /*** Affiche toutes les categories ***/
-        $categoryModel = new CategoryModel();
-        $categories = $categoryModel->readAll();
-
+        
         $commentsModel = new CommentsModel();
         $comments = $commentsModel->joinSQL2($id);
 
-        //Rendu
-        $this->render('/comments/afficher', ['comments' => $comments, 'article' => $article, 'categories' => $categories]);
-    
+        //On envoie le resultat dans une vue
+        $this->render('comments/afficher', compact('comments'));
+
+
+
     }
 
 }

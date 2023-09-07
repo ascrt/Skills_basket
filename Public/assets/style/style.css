@@ -61,7 +61,7 @@ nav {
     position: sticky;
     top: 0;
     left: 0;
-    background-color: rgb(179, 54, 9);
+    background-color: goldenrod;
 }
 
 /*** Le burger ***/
@@ -153,11 +153,11 @@ nav ul {
     display: none;
     width: 250px;
     margin-left: 10px;
-    background-color: rgb(179, 54, 9);
+    background-color: rgb(139, 103, 11);
 }
 
 .dropdown-contenu a:hover {
-    background-color: rgb(211, 83, 36);
+    background-color: goldenrod;
 }
 
 .dropdown-contenu, .dropdown-contenu a {
@@ -180,20 +180,20 @@ header {
 }
 
 header h1 {
-    font-size: 3em;
-    font-family:'Lucida Sans';
-    color: rgb(165, 53, 9);
+    font-size: 3.5em;
+    font-family:'Prompt';
+    color: gold;
     text-shadow: 3px 5px 5px black;
 }
 
 /**** Main ***/
 
 main {
-    background-color: whitesmoke;
+    background-color: rgb(9, 115, 236);
     min-height: 70vh;
     margin: 0;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding: 15px;
+    color: whitesmoke;
     text-align: center;
 }
 
@@ -213,7 +213,7 @@ section h2 {
 .plus, .comments {
     margin: auto;
     padding: 15px;
-    background-color: rgb(41, 121, 241);
+    background-color: forestgreen;
     border-radius: 5px;
 }
 
@@ -227,10 +227,14 @@ section h2 {
 }
 
 .plus:hover, .comments:hover {
-    background-color: cornflowerblue;
+    background-color: chartreuse;
     box-shadow: 3px 4px 5px black;
 }
 
+#demo {
+    display: none;
+    color: red;
+}
 
 /*** Formulaire ***/
 form {
@@ -256,7 +260,7 @@ footer {
     min-height: 20vh;
     padding-top: 15px;
     padding-bottom: 15px;
-    background-color: rgb(179, 54, 9);
+    background-color: goldenrod;
 }
 
 footer nav {
@@ -346,7 +350,7 @@ footer p {
 @media screen and (max-width: 768px) {
 
     .plus {
-        width: 45%;
+        width: 35%;
     }
     
 }
@@ -355,12 +359,24 @@ footer p {
 @media screen and (min-width: 769px) and (max-width: 992px) {
 
     .plus {
-        width: 15%;
+        width: 35%;
     }
 
     form {
         height: 30vw;
         width: 40vw;
+    }
+
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    main article {
+        width: 48%;
+        padding: 10px;
+        margin-bottom: 10px;
     }
 
 }
@@ -371,12 +387,30 @@ footer p {
 
 @media screen and (min-width: 993px) {
 
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    main article {
+        width: 30%;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .single {
+        width: 50%;
+        margin: auto;
+        text-align: center;
+    }
+
     .plus {
-        width: 10%;
+        width: 25%;
     }
 
     .comments {
-        width: 20%;
+        width: 30%;
     }
 
     form {
