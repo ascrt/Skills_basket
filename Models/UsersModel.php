@@ -71,6 +71,7 @@ class UsersModel extends Model {
     public function setSession() {
         $_SESSION['user'] = [
             'id' => $this->id,
+            'pseudo' => $this->pseudo,
             'mail' => $this->mail,
             'role' => $this->role
         ];
@@ -80,6 +81,9 @@ class UsersModel extends Model {
     public function userByMail(string $mail) {
         return $this->requete("SELECT * FROM $this->table WHERE mail = ?", [$mail])->fetch(); 
     }
+
+
+
 
 }
 

@@ -169,6 +169,87 @@ class UsersController extends Controller {
 
     }
 
+    //Modifier le pseudo 
+    public function modifier(int $id) {
+
+        /*** Affiche toutes les categories ***/
+        $categoryModel = new CategoryModel();
+        $categories = $categoryModel->readAll();
+
+        /*** Affiche les valeurs d'utilisateur ***/
+        $userModel = new UsersModel();
+        $user = $userModel->read($id);
+
+        /*** Formulaire ***/
+        $form = new Form(); 
+        $form->debutForm()
+        ->ajoutLabel('pseudo', "Nouveau Pseudo")
+        ->ajoutInput("text", "pseudo", ['id' => 'pseudo', 'value' => $user->pseudo ])
+        ->ajoutLabel('mail', "Votre email")
+        ->ajoutInput('mail', "mail",['id' => 'mail', 'value' => $user->mail ])
+        ->ajoutLabel('password', "Mot de passe")
+        ->ajoutInput('password', "password",['id' => 'password', 'value' => $user->password])
+        ->ajoutLabel('password2', "Saisir à nouveau le mot de passe")
+        ->ajoutInput('password', "password2",['id' => 'password2'])
+        ->ajoutBouton('Modifier')
+        ->finForm();
+        
+        //Rendu
+        $this->render('users/modifier', ['categories' => $categories, 'user' => $user, 'form' => $form->create()]);
+
+        
+        //Traitement du formulaire
+        if (Form::validate($_POST, ['pseudo','mail', 'password', 'password2'])) {
+                
+            //Verification du pseudo
+            if(strlen($_POST['pseudo']) > 32 || strlen($_POST['pseudo']) < 1){
+                $_SESSION['erreur'] = "Votre pseudo est invalide";
+                header('Location: /users/profil');
+                exit;
+            }
+
+            $pseudo = $_POST['pseudo'];
+
+            //Verification du mail
+            if(strlen($_POST['mail']) > 64 || filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL) === false) {
+                $_SESSION['erreur'] = "Votre mail est invalide";
+                header('Location: /users/profil');
+                exit;
+            }
+
+            /*** Nettoyage du mail contre les failles XSS et injection SQL */
+            $mail = strip_tags($_POST['mail']);
+                
+            /**** Validation du mot de passe ***/
+            if(strlen($_POST['password']) < 8) {
+                $_SESSION['erreur'] = "Le mot de passe doit avoir au moins 8 caractères";
+                header('Location: /users/profil');
+                exit;
+            }
+
+            if($_POST['password'] !== $_POST['password2']) {
+                $_SESSION['erreur'] = "Les mots de passe sont différents";
+                header('Location: /users/profil');
+                exit;
+            }
+
+            //On hash le mot de passe
+            $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+
+            //On hydrate l'user
+            $userModel->setPseudo($pseudo)
+                ->setMail($mail)
+                ->setPassword($password);
+
+            //On envoie à la base de données
+            $userModel->update($id);
+
+            //Redirection 
+            header('Location: /users/success');
+
+        }
+    }
+
     public function logout() {
         unset($_SESSION['user']);
         header('Location: /users/login');

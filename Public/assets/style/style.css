@@ -26,6 +26,7 @@ li {
 a {
     font-family: 'Raleway';
     text-decoration: none;
+    color: whitesmoke;
 }
 
 h2 {
@@ -59,6 +60,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     position: sticky;
+    z-index: 20;
     top: 0;
     left: 0;
     background-color: goldenrod;
@@ -189,10 +191,11 @@ header h1 {
 /**** Main ***/
 
 main {
-    background-color: rgb(9, 115, 236);
     min-height: 70vh;
+    position: relative;
     margin: 0;
     padding: 15px;
+    background-color: rgb(9, 115, 236);
     color: whitesmoke;
     text-align: center;
 }
@@ -231,10 +234,22 @@ section h2 {
     box-shadow: 3px 4px 5px black;
 }
 
-#demo {
-    display: none;
-    color: red;
+.espace {
+    display: flex;
+    flex-direction: column;
+    margin:  25px auto;
 }
+
+.espace {
+    margin: 10px;
+}
+
+.espace a:hover {
+    color: black;
+}
+
+
+
 
 /*** Formulaire ***/
 form {
@@ -303,6 +318,10 @@ footer p {
 
 /*** Navigation pour tablette et ordinateur ***/
 @media screen and (min-width: 769px) {
+
+    header {
+        min-height: 40vh;
+    }
     
     #btn-burger {
         display: none;
@@ -352,11 +371,18 @@ footer p {
     .plus {
         width: 35%;
     }
+
+
+
     
 }
 
 /*** Tablette ***/
 @media screen and (min-width: 769px) and (max-width: 992px) {
+
+    header {
+        min-height: 40vh;
+    }
 
     .plus {
         width: 35%;
@@ -364,7 +390,7 @@ footer p {
 
     form {
         height: 30vw;
-        width: 40vw;
+        width: 40%;
     }
 
     main {
@@ -378,6 +404,11 @@ footer p {
         padding: 10px;
         margin-bottom: 10px;
     }
+
+    .espace {
+        margin: auto;
+    }
+
 
 }
 
@@ -413,8 +444,16 @@ footer p {
         width: 30%;
     }
 
+    .espace {
+        padding: 10px;
+        margin: auto;
+    }
+
+
+
     form {
         height: 15vw;
         width: 30vw;
     }
+
 }

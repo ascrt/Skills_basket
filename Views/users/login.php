@@ -1,6 +1,11 @@
 <?php $onglet = "Login";?>
 
-<h1> Connexion </h1>
-<?= $loginForm; ?>
+<article class="form">
+    <h1> Connexion </h1>
+    <div>
+        <?= $loginForm; ?>
+        <a href="/users/register"> Pas ecnore alors inscrit-toi ici </a>
+    </div>
+</article>
 
-<a href="/users/register"> Pas ecnore alors inscrit-toi ici </a>
+
