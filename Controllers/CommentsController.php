@@ -26,6 +26,8 @@ class CommentsController extends Controller {
             /*** Affiche toutes les categories ***/
             $categoryModel = new CategoryModel();
             $categories = $categoryModel->readAll();
+
+
             
             //Rendu
             $this->render('/comments/ajouter', ["form" => $form->create(), "categories" => $categories]);
@@ -66,8 +68,11 @@ class CommentsController extends Controller {
         $commentsModel = new CommentsModel();
         $comments = $commentsModel->joinSQL2($id);
 
+        $articleModel = new ArticlesModel();
+        $article = $articleModel->read($id);
+
         //On envoie le resultat dans une vue
-        $this->render('comments/afficher', compact('comments'));
+        $this->render('comments/afficher', compact('comments', 'article'));
 
 
 

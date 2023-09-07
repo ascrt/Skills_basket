@@ -61,8 +61,8 @@
             <div class="circle"><i class="fa-brands fa-twitter"></i></div>
         </div>
         <nav>
-            <a href="#"> Accueil </a>
-            <a href="#"> Inscription </a>
+            <a href="/"> Accueil </a>
+            <a href="/users/register"> Inscription </a>
             <a href="#">Politque de confidentialié</a>
             <a href="#"> Contact </a>
         </nav>
