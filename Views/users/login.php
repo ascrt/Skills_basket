@@ -1,6 +1,6 @@
 <?php $onglet = "Login";?>
 
-<article class="form">
+<article class="login">
     <h1> Connexion </h1>
     <div>
         <?= $loginForm; ?>

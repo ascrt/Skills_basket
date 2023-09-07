@@ -6,11 +6,12 @@
     </div>
 <?php endif; ?>
 
-<h1> Espace administration </h1>
 
 
-<div>
+
+<div class="espace">
+    <h1> Espace administration </h1>
     <a href="/admin/articles"> Espace Articles </a>
-    <a href="#"> Espace Commentaires </a>
+    <a href="/admin/comments"> Espace Commentaires </a>
     <a href="#"> Espace Utilisateur </a>
 </div>

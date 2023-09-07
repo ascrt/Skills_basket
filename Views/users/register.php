@@ -1,6 +1,6 @@
 <?php $onglet = "Inscription"; ?>
 
-<article class="form">
+<article class="register">
     <h1> Inscription </h1>
     <?= $registerForm ?>
 </article>

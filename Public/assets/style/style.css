@@ -390,7 +390,11 @@ footer p {
 
     form {
         height: 30vw;
-        width: 40%;
+        width: 60vw;
+    }
+
+    .register , .login {
+        margin: auto;
     }
 
     main {
@@ -444,12 +448,14 @@ footer p {
         width: 30%;
     }
 
+    .register , .login {
+        margin: auto;
+    }
+
     .espace {
         padding: 10px;
         margin: auto;
     }
-
-
 
     form {
         height: 15vw;
