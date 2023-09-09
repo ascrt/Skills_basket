@@ -6,6 +6,7 @@ use App\Models\ArticlesModel;
 use App\Models\CategoryModel;
 use App\Core\Form;
 use App\Models\CommentsModel;
+use App\Models\UsersModel;
 
 class AdminController extends Controller {
 
@@ -201,6 +202,26 @@ class AdminController extends Controller {
 
             $_SESSION['message'] = "Commentaire supprimé";
             header("Location: /admin");
+        }
+
+    }
+
+
+    /**** Espace Utilisateur ***/
+
+    public function users() {
+
+        if ($this->isAdmin()) {
+
+            /*** Affiche toutes les categories ***/
+            $categoryModel = new CategoryModel();
+            $categories = $categoryModel->readAll(); 
+             
+            /*** Affiche tous les users ***/
+            $usersModel = new UsersModel();
+            $users = $usersModel->readAll();
+
+            $this->render("admin/users", ["categories" => $categories,'users' => $users]);
         }
 
     }
