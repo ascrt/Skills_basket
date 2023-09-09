@@ -42,7 +42,6 @@ class Model extends Db {
         $query = $this->requete('SELECT * FROM ' . $this->table);
         return $query->fetchAll();
     }
-
     //Lire les articles par critères
     public function readBy(array $critere) {
 
@@ -68,7 +67,7 @@ class Model extends Db {
 
     }
 
-
+    
     //Lire les articles selon l'id
     public function read(int $id) {
         $query = $this->requete('SELECT * FROM ' . $this->table . ' WHERE id=' . $id);
@@ -80,8 +79,6 @@ class Model extends Db {
         $query = $this->requete('SELECT * FROM ' . $this->table . ' WHERE users_id=' . $users_id);
         return $query->fetch();       
     }
-
-
     //Jointure SQL 
 
     public function joinSQL(int $id ) {

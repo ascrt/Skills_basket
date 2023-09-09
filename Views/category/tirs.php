@@ -4,7 +4,7 @@
     
     <article>
         <h2> <?= $articleTir->title; ?> </h2>
-        <p> <?= $articleTir->content;?> </p>
+        <p> <?= substr($articleTir->content, 0, 250)?>... </p>
         <div class="plus">
             <a href="/articles/single/<?= $articleTir->id?>"> Voir plus </a>
         </div>

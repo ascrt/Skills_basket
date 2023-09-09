@@ -34,7 +34,24 @@ class CategoryController extends Controller {
         $categories = $categoryModel->readAll();
         
         //rendu
-        $this->render('/category/Finitions', compact('articlesAtkCercle', 'categories'));
+        $this->render('/category/finitions', compact('articlesAtkCercle', 'categories'));
+    }
+
+
+    public function dribble() {
+
+        $categorieModel = new CategoryModel();
+        $articlesDribble = $categorieModel->joinSQL(3);
+
+        /*** Affiche toutes les categories ***/
+        $categoryModel = new CategoryModel();
+        $categories = $categoryModel->readAll();
+
+        //Rendu
+        $this->render('/category/dribble', compact('articlesDribble', 'categories'));
+
+
+
     }
 }
 

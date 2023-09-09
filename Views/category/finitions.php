@@ -4,7 +4,7 @@
     
     <article>
         <h2> <?= $articleAtkCercle->title; ?> </h2>
-        <p> <?= $articleAtkCercle->content;?> </p>
+        <p> <?= substr($articleAtkCercle->content, 0, 250)?>... </p>
         <div class="plus">
             <a href="/articles/single/<?= $articleAtkCercle->id?>"> Voir plus </a>
         </div>
