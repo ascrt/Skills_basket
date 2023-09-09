@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Core\Form;
 use App\Models\ArticlesModel;
 use App\Models\CategoryModel;
+use App\Models\CommentsModel;
 
 class ArticlesController extends Controller {
 
@@ -32,7 +33,11 @@ class ArticlesController extends Controller {
         $categoryModel = new CategoryModel();
         $categories = $categoryModel->readAll();
 
-        $this->render('/articles/single', compact('article', 'categories'));
+        /*** Afficher les commentaire ***/
+        $commentsModel = new CommentsModel();
+        $comments = $commentsModel->joinSQL2($id);
+
+        $this->render('/articles/single', compact('article', 'categories', 'comments'));
     }
 
 }

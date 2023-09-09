@@ -1,6 +1,6 @@
 <?php $onglet = "Success"; ?>
 
 <div>
-    <p> Votre inscription est un succès </p>
+    <p> <?= $_SESSION['message']; unset($_SESSION['message']) ?> </p>
     <a href="/users/login"> Se connecter</a>
 </div>

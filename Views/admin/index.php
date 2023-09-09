@@ -6,9 +6,6 @@
     </div>
 <?php endif; ?>
 
-
-
-
 <div class="espace">
     <h1> Espace administration </h1>
     <a href="/admin/articles"> Espace Articles </a>

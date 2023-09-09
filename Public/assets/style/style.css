@@ -36,7 +36,7 @@ h2 {
 /*** Message de la session ***/
 
 .erreur, .message {
-    width: 35%;
+    width: 80%;
     margin: auto;
     color: whitesmoke;
 }
@@ -225,6 +225,8 @@ section h2 {
     width: 40%;
 }
 
+/*** Liens pour article et commmentaire ***/
+
 .plus a, .comments a {
     color: whitesmoke;
 }
@@ -238,6 +240,13 @@ section h2 {
     box-shadow: 3px 4px 5px black;
 }
 
+/**** Bouton commentaires ****/
+
+#com {
+    display: none;
+}
+
+/*** Admin ***/
 .espace {
     display: flex;
     flex-direction: column;
@@ -298,6 +307,8 @@ footer div.social {
     padding: 5px;
 }
 
+/**** Icone reseaux sociaux ***/
+
 .circle {
     display: flex;
     align-items: center;
@@ -324,6 +335,7 @@ footer p {
 /*** Navigation pour tablette et ordinateur ***/
 @media screen and (min-width: 769px) {
 
+    /**** Header ***/
     header {
         min-height: 40vh;
     }
@@ -332,6 +344,7 @@ footer p {
         display: none;
     }
 
+    /**** Navigation ***/
     nav {
         justify-content: center;
     }
@@ -347,6 +360,7 @@ footer p {
         padding: 10px;
     }
 
+    /**** Menu déroulant ***/
     .dropdown {
         display: flex;
         flex-direction: column;
@@ -362,6 +376,7 @@ footer p {
         left: 0%;
     }
 
+    /**** Footer ****/
     footer nav {
         display: flex;
         justify-content: space-evenly;
@@ -373,13 +388,10 @@ footer p {
 /*** Smartphone ***/
 @media screen and (max-width: 768px) {
 
+    /**** Liens pour les articles ***/
     .plus {
         width: 35%;
     }
-
-
-
-    
 }
 
 /*** Tablette ***/
@@ -389,6 +401,7 @@ footer p {
         min-height: 40vh;
     }
 
+    /**** Liens pour les articles ***/
     .plus {
         width: 50%;
     }
@@ -398,6 +411,7 @@ footer p {
         width: 60vw;
     }
 
+    /**** Formulaire***/
     .register , .login {
         margin: auto;
     }
@@ -414,6 +428,7 @@ footer p {
         margin-bottom: 10px;
     }
 
+    /*** admin **/
     .espace {
         margin: auto;
     }
@@ -446,7 +461,7 @@ footer p {
     }
 
     .plus {
-        width: 35%;
+        width: 25%;
     }
 
     .comments {

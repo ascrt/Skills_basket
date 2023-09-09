@@ -47,11 +47,6 @@
         <h1> Skills_Basket</h1>
     </header>
     <main>
-        <?php if(!empty($_SESSION['erreur'])) : ?>
-            <div class="erreur">
-                <?php echo $_SESSION['erreur']; unset($_SESSION['erreur']); ?>
-            </div>
-        <?php endif ;?>
         <?= $content; ?>
     </main>
     <footer>

@@ -70,12 +70,7 @@ class CommentsController extends Controller {
 
         $articleModel = new ArticlesModel();
         $article = $articleModel->read($id);
-
-        //On envoie le resultat dans une vue
-        $this->render('comments/afficher', compact('comments', 'article'));
-
-
-
+    
     }
 
 }
