@@ -34,7 +34,7 @@
             <?php else : ?>
                 <li><a href="/users/login"> Login </a></li>
             <?php endif; ?>
-            <li><a href="#"> Contact </a></li>
+            <li><a href="/main/contact"> Contact </a></li>
         </ul>
         <!-- Bouton burger -->
         <button id="btn-burger">
@@ -59,7 +59,7 @@
             <a href="/"> Accueil </a>
             <a href="/users/register"> Inscription </a>
             <a href="#">Politque de confidentialié</a>
-            <a href="#"> Contact </a>
+            <a href="/main/contact"> Contact </a>
         </nav>
         <p> &copy; 2023 tout droit réservés</p>
     </footer>

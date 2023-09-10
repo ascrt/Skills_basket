@@ -23,7 +23,7 @@ class MainController extends Controller {
         $categoryModel = new CategoryModel();
         $categories = $categoryModel->readAll();
 
-        $this->render('main/contact/', ["categories" => $categories]);
+        $this->render('main/contact', ["categories" => $categories]);
     }
 }
 
