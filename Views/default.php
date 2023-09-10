@@ -51,9 +51,9 @@
     </main>
     <footer>
         <div class="social">
-            <div class="circle"><i class="fa-brands fa-instagram"></i></div>
-            <div class="circle"><i class="fa-brands fa-tiktok"></i></div>
-            <div class="circle"><i class="fa-brands fa-twitter"></i></div>
+            <div class="circle"> <a href="https://www.instagram.com/"> <i class="fa-brands fa-instagram"></i> </a></div>
+            <div class="circle"><a href="https://www.tiktok.com/fr/"><i class="fa-brands fa-tiktok"></i></a></div>
+            <div class="circle"> <a href="https://twitter.com/?lang=fr"><i class="fa-brands fa-twitter"></i></a></div>
         </div>
         <nav>
             <a href="/"> Accueil </a>
