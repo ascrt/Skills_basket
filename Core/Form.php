@@ -14,7 +14,7 @@ class Form {
 
     //Validation des champs
     //Parametre $form: tableau issue ($_POST, $_GET)
-    //Parametre $champs: tableaulistant les champs obligatoire
+    //Parametre $champs: tableau listant les champs obligatoire
 
     public static function validate(array $form, array $champs) {
 
