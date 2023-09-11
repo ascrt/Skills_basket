@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Envie d'apprendre le baseket de manière simple ou s'améliorer et sans prise de tête Skills Basket est fait pour vous. Alors venez visiter">
     <title> <?php echo $onglet;?></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -58,7 +59,7 @@
         <nav>
             <a href="/"> Accueil </a>
             <a href="/users/register"> Inscription </a>
-            <a href="#">Politque de confidentialié</a>
+            <a href="/main/policy"> Mentions légales </a>
             <a href="/main/contact"> Contact </a>
         </nav>
         <p> &copy; 2023 tout droit réservés</p>

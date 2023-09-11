@@ -25,6 +25,15 @@ class MainController extends Controller {
 
         $this->render('main/contact', ["categories" => $categories]);
     }
+
+    public function policy(){
+
+    /*** Affiche toutes les categories ***/
+    $categoryModel = new CategoryModel();
+    $categories = $categoryModel->readAll();
+
+    $this->render("/main/policy", ["categories" => $categories]);
+    }
 }
 
 
