@@ -16,7 +16,7 @@
             <li>
                 <!-- dropdown  -->
                 <div class="dropdown">
-                    <a href="/"> Catégories</a>
+                    <a href="/category"> Catégories</a>
                     <!-- Dropdown contenu -->
                     <div class="dropdown-contenu">
                         <?php foreach ($categories as $categorie): ?>

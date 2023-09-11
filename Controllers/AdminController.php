@@ -221,7 +221,19 @@ class AdminController extends Controller {
             $usersModel = new UsersModel();
             $users = $usersModel->readAll();
 
-            $this->render("admin/users", ["categories" => $categories,'users' => $users]);
+            $this->render("admin/users", ["categories" => $categories, 'users' => $users]);
+        }
+
+    }
+
+    public function supprimerUser(int $id) {
+
+        if($this->isAdmin()) {
+            $user = new UsersModel();
+            $user->delete($id);
+
+            $_SESSION['message'] = "Utilisateur supprimé";
+            header("Location: /admin");
         }
 
     }

@@ -33,6 +33,27 @@ h2 {
     font-family: 'Prompt';
 }
 
+
+figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50vw;
+    width: 50vw;
+    margin: 15px;
+}
+
+figcaption {
+    text-align: center;
+}
+
+img {
+    height: inherit;
+    width: 100%;
+}
+
+
+
 /*** Message de la session ***/
 
 .erreur, .message {
@@ -195,7 +216,7 @@ main {
     position: relative;
     margin: 0;
     padding: 15px;
-    background-color: rgb(9, 115, 236);
+    background-color: rgb(23, 109, 196);
     color: whitesmoke;
     text-align: center;
 }
@@ -210,6 +231,15 @@ section {
 
 section h2 {
     text-align: left;
+}
+
+/**** section skills ***/
+.skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 /**Liens dans un article et les commentaires **/
@@ -278,6 +308,23 @@ form {
     background-color: cornflowerblue;
     color: whitesmoke;
 }
+
+
+/*** Tableau ***/
+
+.tab-com {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    border: 1px solid chartreuse;
+}
+
+
+td {
+    border: 1px solid whitesmoke;
+}
+
 
 
 /***Footer ***/
@@ -412,6 +459,18 @@ footer p {
         width: 60vw;
     }
 
+    /*** section skills ***/
+
+    .skills {
+        flex-direction: row;
+    }
+    
+    figure {
+        height: 30vw;
+        width: 40vw;
+        margin: 15px;
+    }
+
     /**** Formulaire***/
     .register , .login {
         margin: auto;
@@ -453,6 +512,19 @@ footer p {
         width: 30%;
         padding: 10px;
         margin-bottom: 10px;
+    }
+
+    /*** section skills ***/
+
+    .skills {
+        flex-direction: row;
+        width: 85%;
+    }
+        
+    figure {
+        height: 30vw;
+        width: 20vw;
+        margin: 15px;
     }
 
     .single {

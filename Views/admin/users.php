@@ -1,7 +1,8 @@
 <?php $onglet = "Espace Commentaires" ?>
 
+<h2> Utilisateurs du site </h2>
 
-<table>
+<table class="tab-com">
     <thead>
         <th> ID </th>
         <th> Pseudo </th>
@@ -12,9 +13,11 @@
             <tr>
                 <td> <?= $user->id ; ?> </td>
                 <td> <?= $user->pseudo; ?> </td>
-                <td> <?= $user-> Mail ?> </td>
-                <a href="#"> Supprimer </a>
+                <td> <?= $user-> mail ?> </td>
+                <td> <a href="/admin/supprimerUser/<?= $user->id?>"> Supprimer </a> </td>
             </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
+
+<a href="/admin"> Retour à l'accueil administration </a>

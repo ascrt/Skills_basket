@@ -7,7 +7,15 @@ use App\Models\CategoryModel;
 class CategoryController extends Controller {
 
     public function index() {
-        echo "Categories";
+
+         /*** Affiche toutes les categories ***/
+         $categoryModel = new CategoryModel();
+         $categories = $categoryModel->readAll();
+
+         //rendu
+         $this->render('/category/index', compact('categories'));
+         
+        
     }
 
 
